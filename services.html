@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" />
+
+    <style>
+      /* Your existing styles remain the same, including overlay and arrow-container styles. */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px);
+        background: rgba(0, 0, 0, 0.4);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        flex-direction: column;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .overlay.show {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .overlay-content {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .overlay.show #overlayImage {
+        transform: scale(1.05);
+      }
+
+      .overlay img {
+        max-height: 60vh;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .image-area {
+        position: relative; /* Ensure the close button positions relative to this container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        color: #000 !important;
+        background: rgb(255, 255, 255);/* Solid black background */
+        border-radius: 10%;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 10;
+        transition:  0.2s ease;
+      }
+
+      .close:hover {
+        background: rgba(0, 0, 0);
+      }
+
+      .arrow-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px;
+        margin-top: 10px;
+      }
+
+      .arrow {
+        font-size: 36px;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .arrow:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .image-container {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .thumbnail {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .click-label {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.65);
+        color: #fff;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        z-index: 5;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <!-- service section start -->
+    <div class="service_section layout_padding">
+      <div class="container">
+        <h1 class="services_text">Style Guide</h1>
+        <p class="dolor_text" style="font-size: 18.5px">
+          Here is a detailed style guide that outlines the different hairstyles
+          we create, showcasing the variety and expertise we offer to help you
+          choose the perfect look
+        </p>
+        <div class="service_section_2">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="image-container">
+                <img src="images/natural_hairstyles.png" id="Natural" width="204px" height="204px" alt="Natural Hairstyles" class="thumbnail" data-style="natural">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">NATURAL HAIRSTYLES</h1>
+              <p class="consectetur_text">
+                Natural hairstyles celebrate the beauty and texture of your own hair without the use of extensions. These styles are all about embracing your curls, coils, or kinks.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="image-container">
+                <img src="images/hairimg-11.png" id="Twists" width="204px" height="204px" alt="Twists" class="thumbnail" data-style="twists">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">TWISTS</h1>
+              <p class="consectetur_text">
+                A beautiful and elegant protective style where hair is twisted
+                into sleek or chunky sections. Twists are great for adding
+                volume, length, and texture.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="image-container">
+                <img src="images/hairimg-12.png" id="Locs" width="204px" height="204px" alt="Butterfly Locs" class="thumbnail" data-style="locs">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">BUTTERFLY LOCS</h1>
+              <p class="consectetur_text">
+                A trendy and boho-inspired style, butterfly locs create a messy,
+                textured, and natural look that’s lightweight and stylish.
+                Perfect for a carefree, chic vibes
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="image-container">
+                <img src="images/cornrows.png" id="Cornrows"width="204px" height="204px" alt="CORNROWS" class="thumbnail" data-style="cornrows">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">CORNROWS</h1>
+              <p class="consectetur_text">
+                Cornrows are a sleek, close-to-the-scalp braiding style that’s both protective and long-lasting. Whether worn straight back or in creative patterns, cornrows keep hair secure and neat with minimal upkeep.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="image-container">
+                <img src="images/fulani_braids.png" id="Fulani"width="204px" height="204px" alt="FULANI BRAIDS" class="thumbnail" data-style="fulani">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">FULANI BRAIDS</h1>
+              <p class="consectetur_text">
+                A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <!-- <div class="image-container">
+                <img src="images/fulani_braids.png" id="Fulani"width="204px" height="204px" alt="FULANI BRAIDS" class="thumbnail" data-style="fulani">
+                <div class="click-label">Tap to View</div>
+              </div> -->
+              <h1 class="classic_text">ADD-ONS</h1><br>
+              <p class="consectetur_text">
+                <ul>
+                  <li><h2 style="color: white;">Heart/Curved Designs: +£5 - £10</h2></li><br>
+                  <li><h2 style="color: white;">Beads/Accesories: +£3</h2></li><br>
+                  <li><h2 style="color: white;">Hair Not Included?: £5 discount</h2></li><br>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Overlay -->
+    <div id="fullscreenOverlay" class="overlay">
+      <!-- <span class="close" id="closeOverlay">&times;</span> -->
+      <div class="overlay-content" id="overlayContent">
+        <div class="image-area" id="imageArea">
+          <span class="close" id="closeOverlay">x</span>
+          <img id="overlayImage" src="" alt="" />
+          <div class="image-description">
+            <h1 id="overlayTitle" class="classic_text"></h1>
+            <p id="overlayText" class="consectetur_text"></p>
+          </div>
+        </div>
+        <div class="arrow-container">
+          <span class="arrow" id="prev">&#10094;</span>
+          <span class="arrow" id="next">&#10095;</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="js/audio-player.js"></script>
+
+    <script>
+      const styles = [
+      {
+          src: "images/hair/new hair/long_fulani_braids.jpg",
+          title: "FULANI BRAIDS(long)",
+          description: "£50",
+          dataStyle: "fulani",
+        },
+        {
+          src: "images/hair/new hair/medium_fulani_braids.jpg",
+          title: "FULANI BRAIDS(medium)",
+          description: "£40",
+          dataStyle: "fulani",
+        },
+        {
+          src: "images/hair/new hair/short_fulani_braids.jpg",
+          title: "FULANI BRAIDS(short)",
+          description: "£30",
+          dataStyle: "fulani",
+        },
+      {
+          src: "images/hair/new hair/cornrows1.jpg",
+          title: "CORNROWS",
+          description: "£30",
+          dataStyle: "cornrows",
+        },
+        {
+          src: "images/hair/new hair/cornrows2.jpg",
+          title: "CORNROWS",
+          description: "£25",
+          dataStyle: "cornrows",
+        },
+        {
+          src: "images/hair/new hair/cornrows3.jpg",
+          title: "CORNROWS",
+          description: "£25",
+          dataStyle: "cornrows",
+        },
+        {
+          src: "images/hair/new hair/cornrows4.jpg",
+          title: "CORNROWS",
+          description: "£45",
+          dataStyle: "cornrows",
+        },
+        {
+          src: "images/hair/new hair/cornrows5.jpg",
+          title: "CORNROWS",
+          description: "£40",
+          dataStyle: "cornrows",
+        },
+        {
+          src: "images/hair/new hair/afro_puff.jpg",
+          title: "AFRO PUFF",
+          description: "£15",
+          dataStyle: "natural",
+        },
+        {
+          src: "images/hair/new hair/afro_puff.jpg",
+          title: "WASH AND GO",
+          description: "£20",
+          dataStyle: "natural",
+        },
+        {
+          src: "images/hair/new hair/finger_coils.jpg",
+          title: "FINGER COILS",
+          description: "£30",
+          dataStyle: "natural",
+        },
+        {
+          src: "images/hair/new hair/twist_out.jpg",
+          title: "TWIST OUT",
+          description: "£25",
+          dataStyle: "natural",
+        },
+        {
+          src: "images/hair/new hair/bantu_knots.jpg",
+          title: "BANTU KNOTS",
+          description: "£30",
+          dataStyle: "natural",
+        },
+        {
+          src: "images/hair/new hair/two_strand_twists.jpg",
+          title: "TWO-STRAND TWISTS",
+          description: "£40",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/barrel_twists.jpg",
+          title: "BARREL TWISTS",
+          description: "£30",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/flat_twists.jpg",
+          title: "FLAT TWISTS",
+          description: "£40",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/mini_twists.jpg",
+          title: "MINI TWISTS",
+          description: "£50",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/passion_twists.jpg",
+          title: "PASSION TWISTS (With Extensions)",
+          description: "£45",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/spring_twists.jpg",
+          title: "SPRING TWISTS (With Extensions)",
+          description: "£40",
+          dataStyle: "twists",
+        },
+        {
+          src: "images/hair/new hair/faux_locs.jpg",
+          title: "FAUX LOCS",
+          description: "£50",
+          dataStyle: "locs",
+        },
+        {
+          src: "images/hair/new hair/bohemian_locs.jpg",
+          title: "BOHEMIAN LOCS",
+          description: "£40",
+          dataStyle: "locs",
+        },
+        {
+          src: "images/hair/new hair/soft_locs.jpg",
+          title: "SOFT LOCS",
+          description: "£50",
+          dataStyle: "locs",
+        },
+        {
+          src: "images/hair/new hair/distressed_locs.png",
+          title: "DISTRESSED LOCS",
+          description: "£50",
+          dataStyle: "locs",
+        },
+        {
+          src: "images/hair/new hair/invisible_locs.jpg",
+          title: "INVISIBLE LOCS",
+          description: "£40",
+          dataStyle: "locs",
+        },
+      ];
+
+      let activeGallery = [];
+      let currentIndex = 0;
+
+      // Cache DOM elements
+      const overlay = document.getElementById("fullscreenOverlay");
+      const overlayImage = document.getElementById("overlayImage");
+      const overlayTitle = document.getElementById("overlayTitle");
+      const overlayText = document.getElementById("overlayText");
+      const thumbnails = document.querySelectorAll(".thumbnail");
+
+      thumbnails.forEach((thumb) => {
+        thumb.addEventListener("click", function () {
+          if (!overlay.classList.contains("show")) {
+            const selectedStyle = this.dataset.style;
+
+            // Build the gallery for this style
+            activeGallery = styles.filter(style => style.dataStyle === selectedStyle);
+
+            currentIndex = 0;
+
+            // Show first image in the overlay
+            overlayImage.src = activeGallery[currentIndex].src;
+            overlayTitle.textContent = activeGallery[currentIndex].title;
+            overlayText.textContent = activeGallery[currentIndex].description;
+
+            overlay.classList.add("show");
+          }
+        });
+      });
+
+
+      document.getElementById("closeOverlay").addEventListener("click", () => {
+        overlay.classList.remove("show");
+      });
+
+      function changeSlide(dir) {
+        currentIndex = (currentIndex + dir + activeGallery.length) % activeGallery.length;
+        overlayImage.src = activeGallery[currentIndex].src;
+        overlayTitle.textContent = activeGallery[currentIndex].title;
+        overlayText.textContent = activeGallery[currentIndex].description;
+      }
+
+      document.getElementById("prev").addEventListener("click", () => changeSlide(-1));
+      document.getElementById("next").addEventListener("click", () => changeSlide(1));
+
+      document.addEventListener("keydown", (e) => {
+        if (overlay.style.display === "flex") {
+          if (e.key === "ArrowLeft") changeSlide(-1);
+          if (e.key === "ArrowRight") changeSlide(1);
+          if (e.key === "Escape") overlay.style.display = "none";
+        }
+      });
+
+      let touchStartX = null;
+      document.getElementById("imageArea").addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+
+      document.getElementById("imageArea").addEventListener("touchend", (e) => {
+        if (!touchStartX) return;
+        let touchEndX = e.changedTouches[0].clientX;
+        let diffX = touchEndX - touchStartX;
+
+        if (Math.abs(diffX) > 50) {
+          if (diffX > 0) changeSlide(-1); 
+          else changeSlide(1);
+        }
+        touchStartX = null;
+      });
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.classList.remove("show");
+      });
+      window.addEventListener('DOMContentLoaded', function () {
+        const hash = window.location.hash.substring(1); // remove the '#'
+        if (hash) {
+          const target = document.getElementById(hash);
+          if (target) {
+            target.click(); // auto "click" the image
+            // Optional: Scroll smoothly to it
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

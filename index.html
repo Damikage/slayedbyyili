@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Slayed By Yili</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/favicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+        /* Centering parent container */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto; /* Adjust height as needed */
+        }
+        /* Thumbnail styling */
+        .thumbnail {
+            width: 204px; /* Small size for thumbnail */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        /* Fullscreen overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column; /* Stack image and text vertically */
+            text-align: center; /* Center text */
+            padding: 20px; /* Optional padding for text */
+        }
+
+        .overlay img {
+            max-width: 150%;
+            max-height: 150%;
+            margin-bottom: 20px; /* Space between image and text */
+        }
+
+        .overlay:target {
+            display: flex;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        /* Text styling under image */
+        .overlay .image-description {
+            color: white;
+            font-size: 18px;
+            max-width: 90%; /* Control max width of the description */
+            margin-top: 10px; /* Space above the text */
+        }
+      </style>
+   </head>
+   <!-- body -->
+   <body>
+
+
+      <!-- This is where the header content will be inserted -->
+      <div id="header"></div>
+
+
+      <!-- banner section start -->
+      <div class="banner_section">
+        <section class="slide-wrapper">
+          <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="image_1"><img src="images/img-1.png"></div>
+                              </div>
+                              <div class="col-md-6">
+                                <h1 class="achive_text">Achieve Your Style</h1>
+                                <p class="best_text">The best place for your hairstyle</p>
+                                <p class="lorem_text">Our goal is to provide you with a comfortable and professional experience, from start to finish. Whether you're looking for something classic or trendy, we’ve got you covered. </p>
+                                <div class="appointment_bt"><a href="pricing.html">Book an appointment</a></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+      </div>
+      <!-- banner section end -->
+      <!-- about section start -->
+      <div class="about_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="unique_text">SLAYED BY YILI</p>
+              <h1 class="years_text">Meet Your Hairstylist</h1>
+              <p class="ipsum_text">Hey everyone! I’m Yili, a passionate hairstylist specialising in protective styles like box braids, twists, and butterfly locs. I’m so excited to share my skills with you all! I’m currently home-based, and I’ll do my best to make this a comfortable experience. If there’s anything you need, feel free to let me know—I’ll work around it!<br><br>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=slayedbyyili@gmail.com" target="_blank">SlayedbyYili@gmail.com</a><br>
+                I can’t wait to slay your hair and help you feel your best!</p>
+              <div class="read_more_bt"><a href="about.html">SEE MORE</a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="image_2"><img src="images/hairimg-5.jpg" style="border-radius: 2%;" width="400px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- about section end -->
+      <!-- service section start -->
+      <div class="service_section layout_padding">
+        <div class="container">
+          <h1 class="services_text">Style Guide</h1>
+          <p class="dolor_text" style="font-size: 18.5px;">Here is a detailed style guide that outlines the different hairstyles we create, showcasing the variety and expertise we offer to help you choose the perfect look</p>
+          <div class="service_section_2">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <!-- Thumbnail Image -->
+                  <a href="#enlarge1">
+                      <img src="images/img-8.png" width="204px" height="204px" alt="Sample Image" class="thumbnail">
+                  </a></div>
+  
+                  <!-- Fullscreen Overlay -->
+                  <div id="enlarge1" class="overlay">
+                    <a href="#!" class="close">&times;</a> <!-- Close Button -->
+                    <a href="#!"><img src="images/img-8.png" alt="Enlarged Image"></a>
+                    <div class="image-description">
+                      <h1 class="classic_text">BOX BRAIDS</h1>
+                      <p class="consectetur_text" style="font-size: 20px;">A classic protective style where your natural hair is braided into extensions. Box braids are lightweight, versatile, and perfect for long-lasting, low-maintenance beauty.</p>    
+                    </div>
+                  </div>
+                <!--<div class="image_3"><a href="images/img-8.png"><img src="images/img-8.png" width="204px" height="204px"></a></div>-->
+                <h1 class="classic_text">BOX BRAIDS</h1>
+                <p class="consectetur_text">A classic protective style where your natural hair is braided into extensions. Box braids are lightweight, versatile, and perfect for long-lasting, low-maintenance beauty.</p>
+                <!-- <div class="read_bt_main">
+                  <div class="read_bt"><a href="services_braids.html">See More</a></div>
+                </div> -->
+              </div>
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <!-- Thumbnail Image -->
+                  <a href="services.html#Twists">
+                  <!-- <a href="#enlarge2"> -->
+                      <img src="images/img-9.png" width="204px" height="204px" alt="Sample Image" class="thumbnail">
+                  </a></div>
+  
+                  <!-- Fullscreen Overlay -->
+                  <div id="enlarge2" class="overlay">
+                    <a href="#!" class="close">&times;</a> <!-- Close Button -->
+                    <a href="#!"><img src="images/img-9.png" alt="Enlarged Image"></a>
+                    <div class="image-description">
+                      <h1 class="classic_text">TWISTS</h1>
+                      <p class="consectetur_text" style="font-size: 20px;">A beautiful and elegant protective style where hair is twisted into sleek or chunky sections. Twists are great for adding volume, length, and texture.</p>    
+                    </div>
+                  </div>
+                <h1 class="classic_text">TWISTS</h1>
+                <p class="consectetur_text">A beautiful and elegant protective style where hair is twisted into sleek or chunky sections. Twists are great for adding volume, length, and texture.</p>
+                <!-- <div class="read_bt_main">
+                  <div class="read_bt"><a href="services.html">See More</a></div>
+                </div> -->
+              </div>
+              <div class="col-sm-4">
+                <div class="image-container">
+                <!-- Thumbnail Image -->
+                <a href="services.html#Cornrows">
+                <!-- <a href="#enlarge3"> -->
+                    <img src="images/img-10.png" width="204px" height="204px" alt="Sample Image" class="thumbnail">
+                </a></div>
+
+                <!-- Fullscreen Overlay -->
+                <div id="enlarge3" class="overlay">
+                  <a href="#!" class="close">&times;</a> <!-- Close Button -->
+                  <a href="#!"><img src="images/img-11.png" alt="Enlarged Image"></a>
+                  <div class="image-description">
+                    <h1 class="classic_text">CORNROWS</h1>
+                    <p class="consectetur_text" style="font-size: 20px;">Cornrows are a sleek, close-to-the-scalp braiding style that’s both protective and long-lasting. They keep hair secure and neat with minimal upkeep</p>    
+                  </div>
+                </div>
+                <h1 class="classic_text">CORNROWS</h1>
+                <p class="consectetur_text">Cornrows are a sleek, close-to-the-scalp braiding style that’s both protective and long-lasting. They keep hair secure and neat with minimal upkeep</p>
+                <!-- <div class="read_bt_main">
+                  <div class="read_bt"><a href="services.html">See More</a></div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- service section end -->
+      <!--discount section start -->
+      <div class="discount_section layout_padding">
+        <div class="container">
+          <div class="discount_bg">
+            <div class="row">
+              <div class="col-sm-8">
+                <h1 class="get_tetx">READY FOR A NEW STYLE?</h1>
+                <h1 class="every_tetx">YOUR PERFECT HAIR DAY, EVERY WEEK!</h1>
+                <h1 class="promo_tetx">RESERVE YOUR SPOT NOW!</h1>
+                <!--<h1 class="get_tetx">GET FLAT 25% DISCOUNT</h1>
+                <h1 class="every_tetx">ON EVERY SUNDAY OF DECEMBER</h1>
+                <h1 class="promo_tetx">USE PROMO CODE: BARBERDIS</h1>-->
+              </div>
+              <div class="col-sm-4">
+                <div class="image_6"><img src="images/aboutimg-2.png"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- discount section end -->
+      <!-- client section start --> 
+      <div class="client_section layout_padding">
+        <h1 class="client_taital">GET READY FOR YOUR APPOINTMENT</h1>
+        <div class="container">
+          <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Wash Your Hair</h3>
+                      <p class="reader_text">Arrive with clean, product-free hair to ensure the best results possible</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Detangle Your Hair</h3>
+                      <p class="reader_text">Please detangle your hair before your appointment to avoid extra fees</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Skip Heavy Products</h3>
+                      <p class="reader_text">Avoid oils, creams, or leave-in conditioners on your hair before your visit.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Be Comfortable</h3>
+                      <p class="reader_text">Wear relaxed clothing to stay at ease during your appointment session.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Come Alone</h3>
+                      <p class="reader_text">To keep things professional and focused, no additional guests are allowed</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Enjoy Your Stay</h3>
+                      <p class="reader_text">Relax and enjoy the experience! This isn’t just about getting your hair done; it’s about treating yourself to a moment of self-care</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+              <i class="fa fa-long-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+              <i class="fa fa-long-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- client section end -->
+      <!-- Contact Section Start -->
+<div class="contact_section layout_padding">
+  <div class="container">
+      <h1 class="contact_taital">Contact Us</h1>
+      <div class="contact_section_2">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="mail_section">
+                      <!-- Netlify Form -->
+                      <form name="contact" netlify>
+                          <input type="hidden" name="form-name" value="contact" />
+
+                          <input type="text" class="mail_text" placeholder="Name" name="name" required>
+                          <input type="email" class="mail_text" placeholder="Email" name="email" required>
+                          <input type="tel" class="mail_text" placeholder="Phone Number" name="phone">
+                          <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="Message" required></textarea>
+
+                          <button type="submit" class="send_bt">SEND</button>
+                      </form>
+                      <!-- End Netlify Form -->
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="map_text">
+                      <img src="images/call-icon-1.png">
+                      <span class="call_text_left">07500039916</span>
+                  </div>
+                  <div class="map_text">
+                      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=slayedbyyili@gmail.com" target="_blank">
+                          <img src="images/mail-icon-1.png">
+                          <span class="call_text_left">slayedbyyili@gmail.com</span>
+                      </a>
+                  </div>
+                  <div class="map_text">
+                    <a href="https://maps.app.goo.gl/5XtqTnb2Zo8v3rM98" target="_blank">
+                        <img src="images/map-icon-1.png">
+                        <span style="text-decoration: underline; color: #007bff;" class="call_text_left">2 Aln St, Hebburn NE31 1XS</span>
+                    </a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Contact Section End -->
+
+
+      <!-- This is where the footer content will be inserted -->
+      <div id="footer"></div>
+
+
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <!-- javascript --> 
+   <script src="js/owl.carousel.js"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <!--audio-player script-->
+   <script src="js/audio-player.js"></script>
+   <script>
+     $('#myCarousel').carousel({
+            interval: false
+        });
+
+        //scroll slides on swipe for touch enabled devices
+
+        $("#myCarousel").on("touchstart", function(event){
+
+            var yClick = event.originalEvent.touches[0].pageY;
+            $(this).one("touchmove", function(event){
+
+                var yMove = event.originalEvent.touches[0].pageY;
+                if( Math.floor(yClick - yMove) > 1 ){
+                    $(".carousel").carousel('next');
+                }
+                else if( Math.floor(yClick - yMove) < -1 ){
+                    $(".carousel").carousel('prev');
+                }
+            });
+            $(".carousel").on("touchend", function(){
+                $(this).off("touchmove");
+            });
+        });
+   </script>
+   </body>
+   </html>

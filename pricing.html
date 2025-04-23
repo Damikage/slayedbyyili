@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Booking</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/favicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+      <style>
+        /* General Page Styling */
+        /* body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        } */
+
+            label {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          margin: 0;
+          padding: 0;
+        }
+
+        input[type="checkbox"] {
+          margin: 0;
+          padding: 0;
+          vertical-align: middle;
+          width: 16px;
+          height: 16px;
+        }
+
+        /* Form Container */
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh; /* Full height, so form is vertically centered */
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Form Title */
+        h2 {
+            text-align: center;
+            color: #b7990f;
+            font-size: 24px;
+        }
+
+        /* Input Fields */
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        /* Button */
+        button {
+            background-color: #b7990f;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8F730C;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            form {
+                max-width: 90%;
+            }
+          
+        }
+
+        .hairstyle-dropdown {
+            max-width: 480px;
+            appearance: auto !important;
+            display: inline-block !important;
+            width: 100% !important; /* Added !important to make sure it's applied */
+            padding: 10px !important;
+            font-size: 16px !important;
+            border: 1px solid #ccc !important;
+            border-radius: 5px !important;
+            background-color: white !important;
+            cursor: pointer !important;
+        }
+    </style>
+   </head>
+   <!-- body -->
+   <body>
+      <!-- This is where the header content will be inserted -->
+      <div id="header"></div>
+      <!--discount section start -->
+      <!-- <div class="discount_section layout_padding">
+        <div class="container">
+          <div class="discount_bg">
+            <div class="row">
+              <div class="col-sm-8">
+                <h1 class="get_tetx">GET FLAT 25% DISCOUNT</h1>
+                <h1 class="every_tetx">ON EVERY SUNDAY OF DECEMBER</h1>
+                <h1 class="promo_tetx">USE PROMO CODE: BARBERDIS</h1>
+              </div>
+              <div class="col-sm-4">
+                <div class="image_6"><img src="images/img-6.png"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- discount section end -->
+      <!--discount section start -->
+      <div class="discount_section layout_padding" style="padding-bottom: 5%;">
+        <div class="container">
+          <div class="discount_bg">
+            <div class="row">
+              <div class="col-sm-8">
+                <h1 class="get_tetx">READY FOR A NEW STYLE?</h1>
+                <h1 class="every_tetx">YOUR PERFECT HAIR DAY, EVERY WEEK!</h1>
+                <h1 class="promo_tetx">RESERVE YOUR SPOT NOW!</h1>
+                <!--<h1 class="get_tetx">GET FLAT 25% DISCOUNT</h1>
+                <h1 class="every_tetx">ON EVERY SUNDAY OF DECEMBER</h1>
+                <h1 class="promo_tetx">USE PROMO CODE: BARBERDIS</h1>-->
+              </div>
+              <div class="col-sm-4">
+                <div class="image_6"><img src="images/aboutimg-2.png"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- discount section end -->
+      <!--form section start-->
+      <div class="container2">
+        <form name="booking" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="booking">
+          <h2>BOOK NOW</h2>
+          <!-- <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone" required>
+          <input type="datetime-local" name="appointment_date" id="appointment_date" required> -->
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/slayedbyyili" style="min-width:320px;height:700px;"></div>
+          <!-- Warning message -->
+          <p id="calendly-warning" style="color: red; display: none;">Please complete your booking before continuing.</p>
+
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+                
+          <label for="hairstyle">Choose a Hairstyle:</label>
+          <select name="hairstyle" id="hairstyle" class="hairstyle-dropdown" required>
+              <option value="">Select a Hairstyle</option>
+              <option value="Afro Puff">Afro Puff</option>
+              <option value="Bantu Knots">Bantu Knots</option>
+              <option value="Barrel Twists">Barrel Twists</option>
+              <option value="Box Braids">Box Braids</option>
+              <option value="Bohemian Locs">Bohemian Locs</option>
+              <option value="ButterFly Locs">ButterFly Locs</option>
+              <option value="Children's Hair">Children's Hair</option>
+              <option value="Cornrows">Cornrows</option>
+              <option value="Curly-End Braids">Curly-End Braids</option>
+              <option value="Distressed Locs">Distressed Locs</option>
+              <option value="Finger Coils">Finger Coils</option>
+              <option value="French Curls">French Curls</option>
+              <option value="Fulani Braids(long)">Fulani Braids(long)</option>
+              <option value="Fulani Braids(medium)">Fulani Braids(medium)</option>
+              <option value="Fulani Braids(short)">Fulani Braids(short)</option>
+              <option value="Invisible Locs">Invisible Locs</option>
+              <option value="Mini Twists">Mini Twists</option>
+              <option value="Passion Twists">Passion Twists</option>
+              <option value="Soft Locs">Soft Locs</option>
+              <option value="Spring Twists">Spring Twists</option>
+              <option value="Twist Out">Twist Out</option>
+              <option value="Two-Strand Twists">Two-Strand Twists</option>
+              <option value="Wash and Go">Wash and Go</option>
+          </select><br>
+          <h4><b>Booking – Terms & Conditions</b></h4><br>
+
+            <b>1. Appointments</b>
+            All appointments must be booked at least 48 hours in advance. <br>A £5 non-refundable deposit is required to secure your slot. <br>Late arrivals beyond 15 minutes may result in cancellation.<br><br>
+            <b>2. Cancellations & Rescheduling</b>
+            Please give at least 24 hours' notice for cancellations or rescheduling. <br>Failure to do so will result in the deposit being forfeited.<br><br>
+            <b>3. Payments</b>
+            Full payment is due immediately after the service. <br>Cash, bank transfer, and other agreed methods are accepted.<br><br> 
+            <b>4. Client Responsibility</b>
+            Please arrive with your hair clean and detangled, unless you've booked a wash and prep service. <br>Additional fees may apply if prep is needed but not booked.<br><br>
+            <b>5. No-Shows</b>
+            Clients who miss an appointment without prior notice will be required to pay in full before rebooking in the future.<br><br>
+            <b>6. Refund Policy</b>
+            Due to the nature of the service, refunds are not provided. <br>If you have concerns, please raise them before leaving the appointment.<br><br>
+            <b>7. Photo & Video Consent</b>
+            Photos and videos may be taken during or after your appointment for social media and promotional purposes. <br>By booking, you agree to this unless you state otherwise before your appointment.<br><br>
+            <b>8. Gift Boxes & Offers</b>
+            Gift items are subject to availability and are complimentary. <br>Offers and discounts cannot be combined unless stated.<br><br>
+            By booking with Slayed by Yili, you agree to these terms and conditions.
+          <label>
+            <input type="checkbox" id="agreeCheckbox" onclick="toggleButton()" required>
+            I agree to the terms & condition
+          </label>
+          <br><br>
+          <button type="submit" id="submitButton">Book Now</button>
+          <!-- <button type="submit">Book Now</button> -->
+      </form>
+      
+        <!-- <textarea name="message" placeholder="Hairstyle" rows="3"></textarea> -->
+        <!-- <button type="submit">Book Now</button> --></div>
+      <!-- client section start --> 
+      <div class="client_section layout_padding">
+        <h1 class="client_taital">GET READY FOR YOUR APPOINTMENT</h1>
+        <div class="container">
+          <div id="main_slider" class="carousel slide" data-ride="carousel" data-bs-touch="true">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Wash Your Hair</h3>
+                      <p class="reader_text">Arrive with clean, product-free hair to ensure the best results possible</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Detangle Your Hair</h3>
+                      <p class="reader_text">Please detangle your hair before your appointment to avoid extra fees</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Skip Heavy Products</h3>
+                      <p class="reader_text">Avoid oils, creams, or leave-in conditioners on your hair before your visit.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Be Comfortable</h3>
+                      <p class="reader_text">Wear relaxed clothing to stay at ease during your appointment session.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Come Alone</h3>
+                      <p class="reader_text">To keep things professional and focused, no additional guests are allowed</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="alex_bg">
+                      <h3 class="alex_text">Enjoy Your Stay</h3>
+                      <p class="reader_text">Relax and enjoy the experience! This isn’t just about getting your hair done; it’s about treating yourself to a moment of self-care</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+              <i class="fa fa-long-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+              <i class="fa fa-long-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- client section end -->
+      <!-- join us section start -->
+      <div class="client_section layout_padding" id="footer"></div>
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <!-- javascript --> 
+   <script src="js/owl.carousel.js"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <script src="js/audio-player.js"></script>
+   <script>
+     $('#myCarousel').carousel({
+            interval: 8000
+        });
+
+        //scroll slides on swipe for touch enabled devices
+
+        $("#myCarousel").on("touchstart", function(event){
+
+            var yClick = event.originalEvent.touches[0].pageY;
+            $(this).one("touchmove", function(event){
+
+                var yMove = event.originalEvent.touches[0].pageY;
+                if( Math.floor(yClick - yMove) > 1 ){
+                    $(".carousel").carousel('next');
+                }
+                else if( Math.floor(yClick - yMove) < -1 ){
+                    $(".carousel").carousel('prev');
+                }
+            });
+            $(".carousel").on("touchend", function(){
+                $(this).off("touchmove");
+            });
+        });
+   </script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Pre-defined booked slots
+      const bookedSlots = [
+          "2025-02-10T10:00", // Example slot
+          "2025-02-10T12:00",
+          "2025-02-11T14:30"
+      ];
+
+      const appointmentDateInput = document.getElementById("appointment_date");
+
+      // Disable past dates and prevent user from selecting dates in the past
+      const today = new Date();
+      const minDate = today.toISOString().slice(0, 16);
+      appointmentDateInput.min = minDate;
+
+      // Define holiday periods (Easter & Summer Break)
+      const holidayPeriods = [
+          { start: "2025-04-14", end: "2025-04-21" }, // Easter Break (April 14 - April 21, 2025)
+          { start: "2025-07-01", end: "2025-08-31" }  // Summer Break (July 1 - August 31, 2025)
+      ];
+
+      function isHoliday(date) {
+          return holidayPeriods.some(period => date >= period.start && date <= period.end);
+      }
+
+      // Listen for changes to the date input
+      appointmentDateInput.addEventListener("change", function () {
+          const selectedDateTime = new Date(this.value);
+          const selectedDate = this.value.split("T")[0]; // Extract the date part
+          const hours = selectedDateTime.getHours();
+          const day = selectedDateTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+          // Check if selected date falls within a holiday period
+          const isHolidayDate = isHoliday(selectedDate);
+
+          // If not a holiday, disable weekdays (Monday-Friday)
+          if (!isHolidayDate && day >= 1 && day <= 5) {
+              alert("Appointments are only available on weekends (Saturday & Sunday), except during holidays.");
+              this.value = ""; // Reset the input
+              return;
+          }
+
+          // Check if the selected time is within the valid hours (9 AM to 7 PM)
+          if (hours < 9 || hours > 19) {
+              alert("Appointments are available only from 9 AM to 7 PM.");
+              this.value = ""; // Reset the input
+              return;
+          }
+
+          // Check if the selected slot is already booked
+          if (bookedSlots.includes(this.value)) {
+              alert("This slot is already booked. Please choose another time.");
+              this.value = ""; // Reset the input
+          }
+      });
+  });
+</script>
+<!-- <script>
+  function toggleButton() {
+    const checkbox = document.getElementById('agreeCheckbox');
+    const button = document.getElementById('submitButton');
+  }
+</script> -->
+<script>
+  let bookingComplete = false;
+
+  // Listen for Calendly booking completion
+  window.addEventListener('message', function(e) {
+    if (e.origin === "https://calendly.com" && e.data.event === "calendly.event_scheduled") {
+      bookingComplete = true;
+      document.getElementById("calendly-warning").style.display = "none";
+    }
+  });
+
+  // Handle the submit button
+  document.getElementById("submitButton").addEventListener("click", function(e) {
+    const checkbox = document.getElementById('agreeCheckbox');
+
+    // Only do this if you also require the checkbox
+    const checkboxRequired = checkbox ? !checkbox.checked : false;
+
+    if (!bookingComplete || checkboxRequired) {
+      e.preventDefault();
+      if (!bookingComplete) {
+        document.getElementById("calendly-warning").style.display = "block";
+      }
+      // If needed, you can show a warning for the checkbox too
+    } else {
+      // All good — form will submit
+      console.log("Ready to submit form");
+    }
+  });
+</script>
+
+
+   </body>
+   </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>About</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/favicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <!-- body -->
+   <body>
+      <!-- This is where the header content will be inserted -->
+      <div id="header"></div>
+      <!-- about section start -->
+      <div class="about_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="unique_text">SLAYED BY YILI</p>
+              <h1 class="years_text">Meet Your Hairstylist</h1>
+              <p class="ipsum_text">Hey everyone! I’m Yili, a passionate hairstylist specialising in protective styles like box braids, twists, and butterfly locs. I’m so excited to share my skills with you all! I’m currently home-based, and I’ll do my best to make this a comfortable experience. If there’s anything you need, feel free to let me know—I’ll work around it!<br><br>
+                I can’t wait to slay your hair and help you feel your best!</p><br>
+                Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=slayedbyyili@gmail.com" target="_blank">SlayedbyYili@gmail.com</a>
+              <!-- <div class="read_more_bt"><a href="#">READ MORE</a></div> -->
+            </div>
+            <div class="col-md-6">
+              <div class="image_2"><img src="images/hairimg-5.jpg" style="border-radius: 2%;" width="400px" height="auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- about section end -->
+      <!-- This is where the footer content will be inserted -->
+      <div id="footer"></div>
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <!-- javascript --> 
+   <script src="js/owl.carousel.js"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <script src="js/audio-player.js"></script>
+   <script>
+     $('#myCarousel').carousel({
+            interval: false
+        });
+
+        //scroll slides on swipe for touch enabled devices
+
+        $("#myCarousel").on("touchstart", function(event){
+
+            var yClick = event.originalEvent.touches[0].pageY;
+            $(this).one("touchmove", function(event){
+
+                var yMove = event.originalEvent.touches[0].pageY;
+                if( Math.floor(yClick - yMove) > 1 ){
+                    $(".carousel").carousel('next');
+                }
+                else if( Math.floor(yClick - yMove) < -1 ){
+                    $(".carousel").carousel('prev');
+                }
+            });
+            $(".carousel").on("touchend", function(){
+                $(this).off("touchmove");
+            });
+        });
+   </script>
+   </body>
+   </html>
