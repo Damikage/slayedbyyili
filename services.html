@@ -245,7 +245,14 @@
           <img id="overlayImage" src="" alt="" />
           <div class="image-description">
             <h1 id="overlayTitle" class="classic_text"></h1>
-            <p id="overlayText" class="consectetur_text"></p>
+            <!-- <p class="consectetur_text">
+              <button style="display: inline-block; margin-right: 10px; vertical-align: middle;">Book</button>
+              <span id="overlayText" style="display: inline-block; vertical-align: middle;"></span>
+            </p> -->
+            <div class="consectetur_text" style="display: flex; justify-content: space-evenly; align-items: center;">
+              <a href="pricing.html#hairstyle"><button style="width: 45px; background-color: #d87aad; border-radius: 10%;">Select</button></a>
+              <span id="overlayText"></span>
+            </div>
           </div>
         </div>
         <div class="arrow-container">
@@ -451,11 +458,20 @@
         overlay.classList.remove("show");
       });
 
+      function updateSelectLink() {
+        const selectButton = document.querySelector(".consectetur_text a");
+        const styleTitle = activeGallery[currentIndex].title;
+        const encodedTitle = encodeURIComponent(styleTitle); // e.g., "Fulani Braids(long)" → "Fulani%20Braids%28long%29"
+        selectButton.href = `pricing.html#style=${encodedTitle}`;
+      }
+
+      // Call this whenever you update the slide
       function changeSlide(dir) {
         currentIndex = (currentIndex + dir + activeGallery.length) % activeGallery.length;
         overlayImage.src = activeGallery[currentIndex].src;
         overlayTitle.textContent = activeGallery[currentIndex].title;
         overlayText.textContent = activeGallery[currentIndex].description;
+        updateSelectLink(); // update the button link
       }
 
       document.getElementById("prev").addEventListener("click", () => changeSlide(-1));
