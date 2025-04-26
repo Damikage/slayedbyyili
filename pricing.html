@@ -80,7 +80,7 @@
         /* Form Title */
         h2 {
             text-align: center;
-            color: #b7990f;
+            color: #d87aad ;
             font-size: 24px;
         }
 
@@ -96,7 +96,7 @@
 
         /* Button */
         button {
-            background-color: #b7990f;
+            background-color: #a34d7e;
             color: white;
             padding: 12px;
             border: none;
@@ -107,7 +107,7 @@
         }
 
         button:hover {
-            background-color: #8F730C;
+            background-color: #6a2e52;
         }
 
         /* Responsive Design */
@@ -189,7 +189,7 @@
           <!-- Warning message -->
           <p id="calendly-warning" style="color: red; display: none;">Please complete your booking before continuing.</p>
 
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          
           <!-- Calendly inline widget end -->
                 
           <label for="hairstyle">Choose a Hairstyle:</label>
@@ -206,6 +206,7 @@
               <option value="Curly-End Braids">Curly-End Braids</option>
               <option value="Distressed Locs">Distressed Locs</option>
               <option value="Finger Coils">Finger Coils</option>
+              <option value="Flat Twists">Flat Twists</option>
               <option value="French Curls">French Curls</option>
               <option value="Fulani Braids(long)">Fulani Braids(long)</option>
               <option value="Fulani Braids(medium)">Fulani Braids(medium)</option>
@@ -421,6 +422,25 @@
   }
 </script> -->
 <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#style=")) {
+      const desiredStyle = decodeURIComponent(hash.replace("#style=", "")).trim();
+  
+      const dropdown = document.getElementById("hairstyle");
+      const options = dropdown.options;
+  
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].text.trim().toLowerCase() === desiredStyle.toLowerCase()) {
+          dropdown.selectedIndex = i;
+          dropdown.scrollIntoView({ behavior: "smooth", block: "center" });
+          break;
+        }
+      }
+    }
+  });
+  </script>
+<script>
   let bookingComplete = false;
 
   // Listen for Calendly booking completion
@@ -439,18 +459,27 @@
     const checkboxRequired = checkbox ? !checkbox.checked : false;
 
     if (!bookingComplete || checkboxRequired) {
-      e.preventDefault();
-      if (!bookingComplete) {
-        document.getElementById("calendly-warning").style.display = "block";
-      }
-      // If needed, you can show a warning for the checkbox too
-    } else {
-      // All good — form will submit
-      console.log("Ready to submit form");
-    }
-  });
-</script>
+    e.preventDefault();
 
+    if (!bookingComplete) {
+      document.getElementById("calendly-warning").style.display = "block";
+
+      // 👇 Scroll to Calendly widget
+      document.querySelector('.calendly-inline-widget').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+    return;
+  }
+
+  // ✅ All good — form can submit
+  console.log("Ready to submit form");
+});
+</script>
+<!-- script for the calendly booking -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
    </body>
    </html>
