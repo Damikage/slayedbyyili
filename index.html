@@ -29,6 +29,31 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <style>
+        .neon-big {
+          /* color: #fd80d1; hot pink, matching that neon */
+          text-transform: uppercase; /* optional if you want all caps */
+          font-weight: thin; /*thicker text for stronger glow*/
+          letter-spacing: 0.1em; /* slight spacing, looks more neon */
+          
+          text-shadow:
+            0 0 1px #ff4fc1,
+            0 0 5px #ff4fc1,
+            0 0 8px #ff4fc1;
+        }
+
+        .neon {
+              text-shadow:
+                0 0 2px #c06399,
+                0 0 4px #c06399,
+                0 0 6px #c06399;
+            }
+
+            /* .neon-button {
+              box-shadow:
+                0 0 1px #8c3d6b,
+                0 0 2px #8c3d6b,
+                0 0 3px #8c3d6b;
+            } */
         /* Centering parent container */
         .image-container {
             display: flex;
@@ -130,7 +155,7 @@
                                 <div class="image_1"><img src="images/img-1.png"></div>
                               </div>
                               <div class="col-md-6">
-                                <h1 class="achive_text">Achieve Your Style</h1>
+                                <h1 class="achive_text neon-big">Achieve Your Style</h1>
                                 <p class="best_text">The best place for your hairstyle</p>
                                 <p class="lorem_text">Our goal is to provide you with a comfortable and professional experience, from start to finish. Whether you're looking for something classic or trendy, we’ve got you covered. </p>
                                 <div class="appointment_bt"><a href="pricing.html">Book an appointment</a></div>

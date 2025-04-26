@@ -184,15 +184,18 @@
           <input type="email" name="email" placeholder="Your Email" required>
           <input type="tel" name="phone" placeholder="Your Phone" required>
           <input type="datetime-local" name="appointment_date" id="appointment_date" required> -->
-          <!-- Calendly inline widget begin -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/slayedbyyili" style="min-width:320px;height:700px;"></div>
+          <!-- setmore inline widget begin -->
+          
+          <a class="setmore-inline-widget" style='float:none;' id='Setmore_button_iframe' href='https://slayedbyyili.setmore.com'><img src='https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg' alt='Click here to book the appointment using setmore' /></a>
+          <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/slayedbyyili" style="min-width:320px;height:700px;"></div> -->
           <!-- Warning message -->
-          <p id="calendly-warning" style="color: red; display: none;">Please complete your booking before continuing.</p>
+          <p id="setmore-warning" style="color: red; display: none;">Please complete your booking before continuing.</p>
 
           
-          <!-- Calendly inline widget end -->
+          <!-- setmore inline widget end -->
                 
           <label for="hairstyle">Choose a Hairstyle:</label>
+          <div id="hair-error-message" style="color: red; margin-top: 5px;"></div>
           <select name="hairstyle" id="hairstyle" class="hairstyle-dropdown" required>
               <option value="">Select a Hairstyle</option>
               <option value="Afro Puff">Afro Puff</option>
@@ -243,8 +246,10 @@
             <input type="checkbox" id="agreeCheckbox" onclick="toggleButton()" required>
             I agree to the terms & condition
           </label>
+          <div id="error-message" style="color: red; margin-top: 5px;"></div>
           <br><br>
           <button type="submit" id="submitButton">Book Now</button>
+          
           <!-- <button type="submit">Book Now</button> -->
       </form>
       
@@ -429,6 +434,8 @@
   
       const dropdown = document.getElementById("hairstyle");
       const options = dropdown.options;
+      const hairErrorMessage = document.getElementById('hair-error-message');
+      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
   
       for (let i = 0; i < options.length; i++) {
         if (options[i].text.trim().toLowerCase() === desiredStyle.toLowerCase()) {
@@ -443,43 +450,55 @@
 <script>
   let bookingComplete = false;
 
-  // Listen for Calendly booking completion
+  // Listen for Setmore booking completion
   window.addEventListener('message', function(e) {
-    if (e.origin === "https://calendly.com" && e.data.event === "calendly.event_scheduled") {
+    if (e.origin === "https://my.setmore.com" && e.data.event_name === "booking_success") {
       bookingComplete = true;
-      document.getElementById("calendly-warning").style.display = "none";
+      document.getElementById("setmore-warning").style.display = "none";
     }
   });
 
   // Handle the submit button
   document.getElementById("submitButton").addEventListener("click", function(e) {
     const checkbox = document.getElementById('agreeCheckbox');
+    const hairstyle = document.getElementById('hairstyle');
+    const errorMessage = document.getElementById('error-message'); // <- ADD THIS
+    const hairErrorMessage = document.getElementById('hair-error-message');
 
     // Only do this if you also require the checkbox
     const checkboxRequired = checkbox ? !checkbox.checked : false;
 
-    if (!bookingComplete || checkboxRequired) {
-    e.preventDefault();
-
-    if (!bookingComplete) {
-      document.getElementById("calendly-warning").style.display = "block";
-
-      // 👇 Scroll to Calendly widget
-      document.querySelector('.calendly-inline-widget').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (checkboxRequired) {
+      e.preventDefault();
+      errorMessage.textContent = "Please agree to the Terms and Conditions!";
+      checkbox.focus(); // Focus the checkbox
+      return;
     }
 
-    return;
-  }
+    if (!hairstyle){
+      e.preventDefault();
+      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
+    }
 
-  // ✅ All good — form can submit
-  console.log("Ready to submit form");
-});
+    // ✅ All good — form can submit
+    console.log("Ready to submit form");
+  });
+
 </script>
 <!-- script for the calendly booking -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script id='setmore_script' type='text/javascript' src='https://assets.setmore.com/integration/static/setmoreIframeLive.js'></script>
 
    </body>
    </html>
+   <!-- // document.getElementById("setmore-warning").style.display = "block";
+
+    // if (!bookingComplete) {
+    //   document.getElementById("setmore-warning").style.display = "block";
+
+    //   // 👇 Scroll to Setmore widget
+    //   document.querySelector('.setmore-inline-widget').scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start'
+    //   });
+    // } -->
