@@ -288,7 +288,7 @@ button {
 
 .layout_padding {
   padding-top: 90px;
-  padding-bottom: 0px;
+  padding-bottom: 20px;
 }
 
 .padding_0 {
@@ -338,6 +338,7 @@ button {
 }
 .call_text_left {
   padding-left: 20px;
+  text-shadow: 0 0 1px #e86eb2, 0 0 1.2px #e86eb2;
 }
 
 .navbar-expand-lg .navbar-nav {
@@ -357,7 +358,7 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #d87aad;
+  color: #e86eb2;
 }
 .banner_section {
   width: 100%;
@@ -385,7 +386,7 @@ p.best_text {
   width: 100%;
   float: left;
   font-size: 20px;
-  color: #bf5f94;
+  color: #ed89c0;
   font-weight: 500;
   margin-left: 0px;
   margin-top: 0px;
@@ -407,15 +408,16 @@ p.lorem_text {
   width: 40%;
   float: left;
   font-size: 16px;
-  color: #1c1c1c;
-  background-color: #7d335c;
+  color: #fff;
+  /* background-color: #ff4fc1; */
+  box-shadow: 0 0 5px #ff4fc1;
   text-align: center;
   text-transform: uppercase;
   padding: 14px 0px;
 }
 .appointment_bt a:hover {
-  color: #1c1c1c;
-  background-color: #bf5f94;
+  color: #fff;
+  background-color: #1c1c1c;
 }
 
 .slide-wrapper {
@@ -485,7 +487,7 @@ p.lorem_text {
 }
 .carousel-indicators li.active {
   margin-bottom: 5px;
-  background: #7d335c;
+  background: #e86eb2;
 }
 .carousel-indicators li {
   background-color: #fcfcfc;
@@ -516,7 +518,8 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 18px;
-  color: #d87aad;
+  color: #e86eb2;
+  text-shadow: 0 0 1px #e86eb2, 0 0 1.5px #e86eb2;
   margin-left: 0px;
   font-weight: bold;
 }
@@ -546,7 +549,8 @@ p.lorem_text {
   float: left;
   font-size: 16px;
   color: #1c1c1c;
-  background-color: #9f4677;
+  background-color: #fff;
+  box-shadow: 0 0 1px #c06399, 0 0 2px #c06399, 0 0 3px #c06399, 0 0 5px #ff4fc1;
   text-align: center;
   text-transform: uppercase;
   padding: 14px 0px;
@@ -576,7 +580,8 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 46px;
-  color: #fefeff;
+  color: #ff4fc1;
+  text-shadow: 0 0 3px #ff4fc1;
   font-weight: bold;
   text-align: center;
 }
@@ -618,6 +623,7 @@ p.lorem_text {
   float: left;
   font-size: 24px;
   color: #ffffff;
+  text-shadow: 0 0 3px #ff4fc1;
   text-align: center;
   margin-left: 0px;
   text-transform: uppercase;
@@ -670,7 +676,8 @@ p.lorem_text {
 .discount_bg {
   width: 90%;
   margin: 0 auto;
-  background-color: #c4669a;
+  /* background-color: #ff4fc1; */
+  box-shadow: 0 0 5px #ff4fc1, 0 0 10px #ff4fc1;
   height: auto;
   padding: 40px 0px 40px 30px;
   text-align: center;
@@ -703,7 +710,7 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 46px;
-  color: #fefeff;
+  color: #e86eb2;
   padding-top: 60px;
   text-align: left;
   font-family: "Baloo Chettan", cursive;
@@ -721,7 +728,7 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 44px;
-  color: #fffeff;
+  color: #e86eb2;
   text-align: left;
 }
 
@@ -891,7 +898,8 @@ p.lorem_text {
 .join_section {
   width: 100%;
   float: left;
-  background-color: #9f4677;
+  background-color: #e86eb2;
+  box-shadow: 0 0 1px #ef88c1, 0 0 1.2px #eca7cd;
   height: auto;
   padding: 40px 0px;
 }
@@ -986,6 +994,7 @@ p.lorem_text {
   left: -95px;
   top: 60%;
   background-color: #d87aad;
+  box-shadow: 0 0 5px #ff4fc1;
 }
 
 #main_slider .carousel-control-prev:hover,
@@ -1006,6 +1015,7 @@ p.lorem_text {
   width: 65px;
   height: 65px;
   background: #d87aad;
+  box-shadow: 0 0 5px #ff4fc1;
   opacity: 1;
   font-size: 30px;
   color: #000;

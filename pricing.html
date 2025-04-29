@@ -196,29 +196,10 @@
           <input type="email" name="email" placeholder="Your Email" required>
           <input type="tel" name="phone" placeholder="Your Phone" required>
           <input type="datetime-local" name="appointment_date" id="appointment_date" required> -->
-          <!-- Calendly inline widget begin -->
-<!--           <div class="calendly-inline-widget" data-url="https://calendly.com/slayedbyyili" style="min-width:320px;height:700px;"></div> -->
-          <!-- Warning message -->
-<!--           <p id="calendly-warning" style="color: red; display: none;">Please complete your booking before continuing.</p> -->
 
-         <div class="calendar-container">
-              <h2>Choose a Date and Time</h2>
-              <form id="booking-form">
-                  <label for="appointment-date">Select a Date:</label>
-                  <input type="date" id="appointment-date" required>
-                  
-                  <label for="appointment-time">Select a Time:</label>
-                  <select id="appointment-time" required>
-                      <option value="">-- Choose Time --</option>
-                  </select>
-                  
-                  <button type="submit">Book Appointment</button>
-              </form>
-          </div>
-
-          <!-- Calendly inline widget end -->
                 
           <label for="hairstyle">Choose a Hairstyle:</label>
+          <div id="hair-error-message" style="color: red; margin-top: 5px;"></div>
           <select name="hairstyle" id="hairstyle" class="hairstyle-dropdown" required>
               <option value="">Select a Hairstyle</option>
               <option value="Afro Puff">Afro Puff</option>
@@ -269,8 +250,10 @@
             <input type="checkbox" id="agreeCheckbox" onclick="toggleButton()" required>
             I agree to the terms & condition
           </label>
+          <div id="error-message" style="color: red; margin-top: 5px;"></div>
           <br><br>
           <button type="submit" id="submitButton">Book Now</button>
+          
           <!-- <button type="submit">Book Now</button> -->
       </form>
       
@@ -455,6 +438,8 @@
   
       const dropdown = document.getElementById("hairstyle");
       const options = dropdown.options;
+      const hairErrorMessage = document.getElementById('hair-error-message');
+      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
   
       for (let i = 0; i < options.length; i++) {
         if (options[i].text.trim().toLowerCase() === desiredStyle.toLowerCase()) {
@@ -469,80 +454,44 @@
 <script>
   let bookingComplete = false;
 
-  // Listen for Calendly booking completion
+  // Listen for Setmore booking completion
   window.addEventListener('message', function(e) {
-    if (e.origin === "https://calendly.com" && e.data.event === "calendly.event_scheduled") {
+    if (e.origin === "https://my.setmore.com" && e.data.event_name === "booking_success") {
       bookingComplete = true;
-      document.getElementById("calendly-warning").style.display = "none";
+      document.getElementById("setmore-warning").style.display = "none";
     }
   });
 
   // Handle the submit button
   document.getElementById("submitButton").addEventListener("click", function(e) {
     const checkbox = document.getElementById('agreeCheckbox');
+    const hairstyle = document.getElementById('hairstyle');
+    const errorMessage = document.getElementById('error-message'); // <- ADD THIS
+    const hairErrorMessage = document.getElementById('hair-error-message');
 
     // Only do this if you also require the checkbox
     const checkboxRequired = checkbox ? !checkbox.checked : false;
 
-    if (!bookingComplete || checkboxRequired) {
-    e.preventDefault();
-
-    if (!bookingComplete) {
-      document.getElementById("calendly-warning").style.display = "block";
-
-      // 👇 Scroll to Calendly widget
-      document.querySelector('.calendly-inline-widget').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (checkboxRequired) {
+      e.preventDefault();
+      errorMessage.textContent = "Please agree to the Terms and Conditions!";
+      checkbox.focus(); // Focus the checkbox
+      return;
     }
 
-    return;
-  }
+    if (!hairstyle){
+      e.preventDefault();
+      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
+    }
 
-  // ✅ All good — form can submit
-  console.log("Ready to submit form");
-});
+    // ✅ All good — form can submit
+    console.log("Ready to submit form");
+  });
+
 </script>
 <!-- script for the calendly booking -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <script>
-        // Set min and max time limits
-        const minTime = 8; // 8:00 AM
-        const maxTime = 17; // 5:00 PM
-
-        // Function to populate time slots based on selected date
-        document.getElementById('appointment-date').addEventListener('change', function () {
-            const selectedDate = new Date(this.value);
-            const day = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
-
-            const timeSelect = document.getElementById('appointment-time');
-            timeSelect.innerHTML = '<option value="">-- Choose Time --</option>'; // Reset time options
-
-            if (day !== 0) { // Exclude Sundays (0)
-                for (let hour = minTime; hour < maxTime; hour++) {
-                    const time = hour < 10 ? `0${hour}:00` : `${hour}:00`;
-                    const option = document.createElement('option');
-                    option.value = time;
-                    option.textContent = time;
-                    timeSelect.appendChild(option);
-                }
-            }
-        });
-
-        // Handle form submission
-        document.getElementById('booking-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const date = document.getElementById('appointment-date').value;
-            const time = document.getElementById('appointment-time').value;
-
-            if (date && time) {
-                alert(`Your appointment is booked for ${date} at ${time}.`);
-            } else {
-                alert('Please select both date and time.');
-            }
-        });
-    </script>
 
    </body>
    </html>
+  
