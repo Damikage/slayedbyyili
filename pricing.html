@@ -31,6 +31,18 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 
       <style>
+         .calendar-container {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+        .calendar-container select, .calendar-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
         /* General Page Styling */
         /* body {
             font-family: 'Arial', sans-serif;
@@ -184,15 +196,7 @@
           <input type="email" name="email" placeholder="Your Email" required>
           <input type="tel" name="phone" placeholder="Your Phone" required>
           <input type="datetime-local" name="appointment_date" id="appointment_date" required> -->
-          <!-- setmore inline widget begin -->
-          
-          <a class="setmore-inline-widget" style='float:none;' id='Setmore_button_iframe' href='https://slayedbyyili.setmore.com'><img src='https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg' alt='Click here to book the appointment using setmore' /></a>
-          <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/slayedbyyili" style="min-width:320px;height:700px;"></div> -->
-          <!-- Warning message -->
-          <p id="setmore-warning" style="color: red; display: none;">Please complete your booking before continuing.</p>
 
-          
-          <!-- setmore inline widget end -->
                 
           <label for="hairstyle">Choose a Hairstyle:</label>
           <div id="hair-error-message" style="color: red; margin-top: 5px;"></div>
@@ -487,18 +491,7 @@
 </script>
 <!-- script for the calendly booking -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<script id='setmore_script' type='text/javascript' src='https://assets.setmore.com/integration/static/setmoreIframeLive.js'></script>
 
    </body>
    </html>
-   <!-- // document.getElementById("setmore-warning").style.display = "block";
-
-    // if (!bookingComplete) {
-    //   document.getElementById("setmore-warning").style.display = "block";
-
-    //   // 👇 Scroll to Setmore widget
-    //   document.querySelector('.setmore-inline-widget').scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'start'
-    //   });
-    // } -->
+  
