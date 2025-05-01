@@ -194,11 +194,27 @@
           <h2>BOOK NOW</h2>
           <!-- <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
-          <input type="tel" name="phone" placeholder="Your Phone" required>
-          <input type="datetime-local" name="appointment_date" id="appointment_date" required> -->
+          <input type="tel" name="phone" placeholder="Your Phone" required> -->
+           
+            <div class="calendar-container">
+                <h3><b>Choose Time and Date: </b></h3>
+                <div id="booking-form">
+                    <input type="datetime-local" name="appointment_date" id="appointment_date" required>
+                    <!-- <label for="appointment-date">Select a Date:</label>
+                    <input type="date" id="appointment-date" required>
+                    
+                    <label for="appointment-time">Select a Time:</label>
+                    <select id="appointment-time" required>
+                        <option value="">-- Choose Time --</option>
+                    </select> -->
+                    
+                    <button type="submit">Book Appointment</button>
+                  </div>
+            </div>
+
 
                 
-          <label for="hairstyle">Choose a Hairstyle:</label>
+          <label for="hairstyle"><h3><b>Choose a Hairstyle:</b></h3></label>
           <div id="hair-error-message" style="color: red; margin-top: 5px;"></div>
           <select name="hairstyle" id="hairstyle" class="hairstyle-dropdown" required>
               <option value="">Select a Hairstyle</option>
@@ -491,6 +507,46 @@
 </script>
 <!-- script for the calendly booking -->
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      
+    <!-- <script>
+        // Set min and max time limits
+        const minTime = 8; // 8:00 AM
+        const maxTime = 17; // 5:00 PM
+
+        // Function to populate time slots based on selected date
+        document.getElementById('appointment-date').addEventListener('change', function () {
+            const selectedDate = new Date(this.value);
+            const day = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
+
+            const timeSelect = document.getElementById('appointment-time');
+            timeSelect.innerHTML = '<option value="">-- Choose Time --</option>'; // Reset time options
+
+            if (day !== 0) { // Exclude Sundays (0)
+                for (let hour = minTime; hour < maxTime; hour++) {
+                    const time = hour < 10 ? `0${hour}:00` : `${hour}:00`;
+                    const option = document.createElement('option');
+                    option.value = time;
+                    option.textContent = time;
+                    timeSelect.appendChild(option);
+                }
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+
+            if (date && time) {
+                alert(`Your appointment is booked for ${date} at ${time}.`);
+            } else {
+                alert('Please select both date and time.');
+            }
+        });
+    </script> -->
+
 
    </body>
    </html>

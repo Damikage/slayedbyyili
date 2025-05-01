@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>About</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/favicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <!-- body -->
+   <body>
+    <style>
+        .neon-big {
+          /* color: #fd80d1; hot pink, matching that neon */
+          text-transform: uppercase; /* optional if you want all caps */
+          font-weight: thin; /*thicker text for stronger glow*/
+          letter-spacing: 0.1em; /* slight spacing, looks more neon */
+          
+          text-shadow:
+            0 0 1px #ff4fc1,
+            0 0 5px #ff4fc1,
+            0 0 8px #ff4fc1;
+        }
+    </style>
+      <!-- This is where the header content will be inserted -->
+      <div id="header"></div>
+       <!-- service section start -->
+    <div class="service_section layout_padding">
+        <div class="container">
+          <h1 class="achive_text neon-big">GALLERY</h1>
+          <p class="dolor_text" style="font-size: 18.5px">
+            Explore our gallery to see a showcase of the diverse hairstyles we create, highlighting the skill and creativity behind each look to help inspire your next style.
+          </p>
+          <div class="service_section_2">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="image-container">
+                      <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
+                    </div>
+                    <h1 class="classic_text">CLIENT NAME</h1>
+                    <p class="consectetur_text">
+                      I would just put something - what they say about the hair and services as a testimonial and to also fill up space.
+                    </p>
+                  </div>
+  
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
+                </div>
+                <h1 class="classic_text">FULANI BRAIDS</h1>
+                <p class="consectetur_text">
+                  A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
+                </p>
+              </div>
+  
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
+                </div>
+                <h1 class="classic_text">FULANI BRAIDS</h1>
+                <p class="consectetur_text">
+                  A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
+                </p>
+              </div>
+  
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
+                </div>
+                <h1 class="classic_text">FULANI BRAIDS</h1>
+                <p class="consectetur_text">
+                  A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
+                </p>
+              </div>
+  
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
+                </div>
+                <h1 class="classic_text">FULANI BRAIDS</h1>
+                <p class="consectetur_text">
+                  A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+      <!-- This is where the footer content will be inserted -->
+      <div id="footer"></div>
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script id='setmore_script' type='text/javascript' src='https://assets.setmore.com/integration/static/setmoreIframeLive.js'></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <!-- javascript --> 
+   <script src="js/owl.carousel.js"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <script src="js/audio-player.js"></script>
+   <script>
+     $('#myCarousel').carousel({
+            interval: false
+        });
+
+        //scroll slides on swipe for touch enabled devices
+
+        $("#myCarousel").on("touchstart", function(event){
+
+            var yClick = event.originalEvent.touches[0].pageY;
+            $(this).one("touchmove", function(event){
+
+                var yMove = event.originalEvent.touches[0].pageY;
+                if( Math.floor(yClick - yMove) > 1 ){
+                    $(".carousel").carousel('next');
+                }
+                else if( Math.floor(yClick - yMove) < -1 ){
+                    $(".carousel").carousel('prev');
+                }
+            });
+            $(".carousel").on("touchend", function(){
+                $(this).off("touchmove");
+            });
+        });
+   </script>
+   </body>
+   </html>
