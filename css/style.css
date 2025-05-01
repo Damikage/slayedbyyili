@@ -352,8 +352,8 @@ button {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
