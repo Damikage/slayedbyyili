@@ -208,7 +208,7 @@
                         <option value="">-- Choose Time --</option>
                     </select> -->
                     
-                    <button type="submit">Book Appointment</button>
+                    <!-- <button type="submit">Book Appointment</button> -->
                   </div>
             </div>
 
@@ -268,7 +268,7 @@
           </label>
           <div id="error-message" style="color: red; margin-top: 5px;"></div>
           <br><br>
-          <button type="submit" id="submitButton">Book Now</button>
+          <button type="submit" id="submitButton">Book & Pay</button>
           
           <!-- <button type="submit">Book Now</button> -->
       </form>
@@ -500,6 +500,9 @@
       e.preventDefault();
       hairErrorMessage.textContent = "please select a hairstyle before contiuing"
     }
+
+    // Prevent Netlify default form submission (as we're handling the submit manually)
+    e.preventDefault();
 
     const formData = new FormData(form);
     fetch("/", {
