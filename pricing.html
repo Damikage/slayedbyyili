@@ -198,6 +198,7 @@
            
             <div class="calendar-container">
                 <h3><b>Choose Time and Date: </b></h3>
+                <div id="date-error-message" style="color: red; margin-top: 5px;"></div>
                 <div id="booking-form">
                     <input type="datetime-local" name="appointment_date" id="appointment_date" required>
                     <!-- <label for="appointment-date">Select a Date:</label>
@@ -210,7 +211,7 @@
                     
                     <!-- <button type="submit">Book Appointment</button> -->
                   </div>
-                  <div style="color: red; font-size: 12px; margin-bottom: 5px;">NOTE: Appointments are only available on weekends(Saturdays & Sundays), from 9AM to 7PM, except during the holidays</div>
+                  <div style="color: rgb(255, 149, 0); font-size: 12px; margin-bottom: 5px;">NOTE: Appointments are only available on weekends(Saturdays & Sundays), from 9AM to 7PM, except during the holidays</div>
             </div>
 
 
@@ -483,12 +484,31 @@
   document.getElementById("submitButton").addEventListener("click", function(e) {
     const form = document.querySelector('form[name="booking"]');
     const checkbox = document.getElementById('agreeCheckbox');
+    const date_time = document.getElementById('appointment_date')
     const hairstyle = document.getElementById('hairstyle');
-    const errorMessage = document.getElementById('error-message'); // <- ADD THIS
+    const errorMessage = document.getElementById('error-message'); 
     const hairErrorMessage = document.getElementById('hair-error-message');
+    const dateErrorMessage = document.getElementById('date-error-message')
 
     // Only do this if you also require the checkbox
     const checkboxRequired = checkbox ? !checkbox.checked : false;
+    const hairstyleRequired = hairstyle ? hairstyle.selectedIndex === 0 : true;
+    const dateRequired = !date_time.value;
+
+
+    if (hairstyleRequired){
+      e.preventDefault();
+      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
+      hairstyle.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    if (dateRequired){
+      e.preventDefault();
+      dateErrorMessage.textContent = "please select date and time before contiuing"
+      date_time.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
     if (checkboxRequired) {
       e.preventDefault();
@@ -497,13 +517,8 @@
       return;
     }
 
-    if (!hairstyle){
-      e.preventDefault();
-      hairErrorMessage.textContent = "please select a hairstyle before contiuing"
-    }
-
     // Prevent Netlify default form submission (as we're handling the submit manually)
-    e.preventDefault();
+    // e.preventDefault();
 
     const formData = new FormData(form);
     fetch("/", {
