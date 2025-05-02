@@ -480,6 +480,7 @@
 
   // Handle the submit button
   document.getElementById("submitButton").addEventListener("click", function(e) {
+    const form = document.querySelector('form[name="booking"]');
     const checkbox = document.getElementById('agreeCheckbox');
     const hairstyle = document.getElementById('hairstyle');
     const errorMessage = document.getElementById('error-message'); // <- ADD THIS
@@ -500,8 +501,23 @@
       hairErrorMessage.textContent = "please select a hairstyle before contiuing"
     }
 
-    // ✅ All good — form can submit
-    console.log("Ready to submit form");
+    const formData = new FormData(form);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      // All good — form can submit
+      console.log("Ready to submit form");
+      // Redirect to Square Checkout
+      window.location.href = "https://square.link/u/c6VHsaj3";
+    })
+    .catch((error) => {
+      console.error("Form submission failed:", error);
+      alert("There was an error submitting the form. Please try again.");
+    });
+    
   });
 
 </script>
