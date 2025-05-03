@@ -580,8 +580,8 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 46px;
-  color: #ff4fc1;
-  text-shadow: 0 0 3px #ff4fc1;
+  /* color: #ff4fc1; */
+  /* text-shadow: 0 0 3px #ff4fc1; */
   font-weight: bold;
   text-align: center;
 }
@@ -710,7 +710,7 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 46px;
-  color: #e86eb2;
+  color: #353434;
   padding-top: 60px;
   text-align: left;
   font-family: "Baloo Chettan", cursive;
@@ -728,7 +728,7 @@ p.lorem_text {
   width: 100%;
   float: left;
   font-size: 44px;
-  color: #e86eb2;
+  color: #353434;
   text-align: left;
 }
 

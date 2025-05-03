@@ -28,10 +28,11 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   </head>
-   <!-- body -->
-   <body>
-    <style>
+
+      <!-- W3.css framework for slideshows on this page -->
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+      <style>
+        .mySlides {display:none;}
         .neon-big {
           /* color: #fd80d1; hot pink, matching that neon */
           text-transform: uppercase; /* optional if you want all caps */
@@ -44,8 +45,12 @@
             0 0 8px #ff4fc1;
         }
     </style>
+   </head>
+   <!-- body -->
+   <body>
       <!-- This is where the header content will be inserted -->
       <div id="header"></div>
+
        <!-- service section start -->
     <div class="service_section layout_padding">
         <div class="container">
@@ -54,8 +59,8 @@
             Explore our gallery to see a showcase of the diverse hairstyles we create, highlighting the skill and creativity behind each look to help inspire your next style.
           </p>
           <div class="service_section_2">
-            <div class="row">
-                <div class="col-sm-4">
+            <div >
+                <!-- <div class="col-sm-4">
                     <div class="image-container">
                       <img src="images/fulani_braids.png" width="204px" height="204px" alt="FULANI BRAIDS" >
                     </div>
@@ -103,6 +108,30 @@
                 <p class="consectetur_text">
                   A stylish mix of cornrows and individual braids, often accented with beads or accessories. Fulani braids are protective, easy to maintain, and perfect for expressing your personal style.
                 </p>
+              </div> -->
+
+              <div class="w3-content w3-section" style="max-width:500px; padding-right: 100px auto;">
+                <!-- <h2 class="w3-center" style="color: #ff4fc1;"></h2> -->
+                <img class="mySlides w3-animate-right" src="images/hair/new hair/invisible_locs.jpg" style="width:100%; height: 500px; border-radius: 2%;">
+                <img class="mySlides w3-animate-right" src="images/hair/new hair/bohemian_locs.jpg" style="width:100%; height: 500px; border-radius: 2%;">
+                <img class="mySlides w3-animate-right" src="images/hair/new hair/faux_locs.jpg" style="width:100%; height: 500px; border-radius: 2%;">
+                <img class="mySlides w3-animate-right" src="images/hair/new hair/finger_coils.jpg" style="width:100%; height: 500px; border-radius: 2%;">
+              </div>
+              <br>
+              
+              <div class="w3-content w3-section" style="max-width:500px; padding-right: 100px auto;">
+                <h1 class="w3-center achive_text neon-big">TESTIMONIAL</h1>
+                <!-- <h2 class="w3-center neon-big">Testimonial</h2> -->
+                <img class="mySlides1 w3-animate-right" src="images/testimonial1.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial2.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial3.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial4.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial5.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial6.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial7.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial8.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial9.jpg" style="width: 100%; border-radius: 2%;">
+                <img class="mySlides1 w3-animate-right" src="images/testimonial10.jpg" style="width: 100%; border-radius: 2%;">
               </div>
   
             </div>
@@ -127,6 +156,57 @@
    <script src="js/owl.carousel.js"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
    <script src="js/audio-player.js"></script>
+   <!-- <script>
+    var slideIndex = [1,1];
+    var slideId = ["mySlides1", "mySlides2"]
+    showDivs(1, 0);
+    showDivs(1, 1);
+    
+    function plusDivs(n, no) {
+      showDivs(slideIndex[no] += n, no);
+    }
+    
+    function showDivs(n, no) {
+      var i;
+      var x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) {slideIndex[no] = 1}
+      if (n < 1) {slideIndex[no] = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex[no]-1].style.display = "block";  
+    }
+    </script> -->
+    <script>
+      var myIndex = 0;
+      var myIndex1 = 0;
+      carousel();
+      carousel1();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 4000); // Change image every 4 seconds
+      }
+      
+      function carousel1() {
+        var i;
+        var x = document.getElementsByClassName("mySlides1");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex1++;
+        if (myIndex1 > x.length) {myIndex1 = 1}    
+        x[myIndex1-1].style.display = "block";  
+        setTimeout(carousel1, 7000); // Change image every 7 seconds
+      }
+      </script>
    <script>
      $('#myCarousel').carousel({
             interval: false

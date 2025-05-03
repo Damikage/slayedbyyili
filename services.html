@@ -76,9 +76,9 @@
         font-size: 28px;
         color: #000 !important;
         background: rgb(255, 255, 255);/* Solid black background */
-        border-radius: 10%;
+        border-radius: 3px;
         width: 30px;
-        height: 30px;
+        height: auto;
         line-height: 30px;
         text-align: center;
         cursor: pointer;
@@ -141,6 +141,18 @@
         pointer-events: none;
         white-space: nowrap;
       }
+
+      .neon-big {
+          /* color: #fd80d1; hot pink, matching that neon */
+          text-transform: uppercase; /* optional if you want all caps */
+          font-weight: thin; /*thicker text for stronger glow*/
+          letter-spacing: 0.1em; /* slight spacing, looks more neon */
+          
+          text-shadow:
+            0 0 1px #ff4fc1,
+            0 0 5px #ff4fc1,
+            0 0 8px #ff4fc1;
+        }
     </style>
   </head>
 
@@ -150,7 +162,7 @@
     <!-- service section start -->
     <div class="service_section layout_padding">
       <div class="container">
-        <h1 class="services_text">Style Guide</h1>
+        <h1 class="services_text neon-big">Style Guide</h1>
         <p class="dolor_text" style="font-size: 18.5px">
           Here is a detailed style guide that outlines the different hairstyles
           we create, showcasing the variety and expertise we offer to help you
@@ -239,10 +251,12 @@
     <!-- Fullscreen Overlay -->
     <div id="fullscreenOverlay" class="overlay">
       <!-- <span class="close" id="closeOverlay">&times;</span> -->
+      <span class="close" id="closeOverlay">x</span>
       <div class="overlay-content" id="overlayContent">
+        
         <div class="image-area" id="imageArea">
-          <span class="close" id="closeOverlay">x</span>
-          <img id="overlayImage" src="" alt="" />
+          
+          <img id="overlayImage" src="" alt="" style="border-radius: 5px;"/>
           <div class="image-description">
             <h1 id="overlayTitle" class="classic_text"></h1>
             <!-- <p class="consectetur_text">
@@ -250,7 +264,7 @@
               <span id="overlayText" style="display: inline-block; vertical-align: middle;"></span>
             </p> -->
             <div class="consectetur_text" style="display: flex; justify-content: space-evenly; align-items: center;">
-              <a href="pricing.html#hairstyle"><button style="width: 45px; background-color: #d87aad; border-radius: 10%;">Select</button></a>
+              <a href="pricing.html#hairstyle"><button style="width: 50px; background-color: #d87aad; border-radius: 2px;">Select</button></a>
               <span id="overlayText"></span>
             </div>
           </div>

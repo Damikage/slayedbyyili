@@ -31,7 +31,13 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 
       <style>
-         .calendar-container {
+        .neon{
+          text-shadow:
+            0 0 1px #ff4fc1,
+            0 0 5px #ff4fc1,
+            0 0 8px #ff4fc1;
+        }
+        .calendar-container {
             width: 100%;
             max-width: 500px;
             margin: auto;
@@ -92,7 +98,7 @@
         /* Form Title */
         h2 {
             text-align: center;
-            color: #d87aad ;
+            /* color: #d87aad ; */
             font-size: 24px;
         }
 
@@ -172,9 +178,9 @@
           <div class="discount_bg">
             <div class="row">
               <div class="col-sm-8">
-                <h1 class="get_tetx">READY FOR A NEW STYLE?</h1>
+                <h1 class="get_tetx neon">READY FOR A NEW STYLE?</h1>
                 <h1 class="every_tetx">YOUR PERFECT HAIR DAY, EVERY WEEK!</h1>
-                <h1 class="promo_tetx">RESERVE YOUR SPOT NOW!</h1>
+                <h1 class="promo_tetx neon">RESERVE YOUR SPOT NOW!</h1>
                 <!--<h1 class="get_tetx">GET FLAT 25% DISCOUNT</h1>
                 <h1 class="every_tetx">ON EVERY SUNDAY OF DECEMBER</h1>
                 <h1 class="promo_tetx">USE PROMO CODE: BARBERDIS</h1>-->
@@ -191,10 +197,8 @@
       <div class="container2">
         <form name="booking" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="booking">
-          <h2>BOOK NOW</h2>
-          <!-- <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="tel" name="phone" placeholder="Your Phone" required> -->
+          <h2 class="neon">BOOK NOW</h2>
+          <!-- <input type="tel" name="phone" placeholder="Your Phone" required> -->
            
             <div class="calendar-container">
                 <h3><b>Choose Time and Date: </b></h3>
@@ -269,7 +273,11 @@
             I agree to the terms & condition
           </label>
           <div id="error-message" style="color: red; margin-top: 5px;"></div>
-          <br><br>
+          <br>
+          <input type="text" id="nameInput" name="name" placeholder="Your Name" required>
+          <div id="name-error-message" style="color: red; margin-top: 2px;"></div>
+          <input type="email" id="mailInput" name="email" placeholder="Email" required><br>
+          <div id="mail-error-message" style="color: red; padding-top: 2px;"></div>
           <button type="submit" id="submitButton">Book & Pay</button>
           
           <!-- <button type="submit">Book Now</button> -->
@@ -483,17 +491,23 @@
   // Handle the submit button
   document.getElementById("submitButton").addEventListener("click", function(e) {
     const form = document.querySelector('form[name="booking"]');
+    const nameInput = document.getElementById('nameInput')
+    const mailInput = document.getElementById('mailInput')
     const checkbox = document.getElementById('agreeCheckbox');
-    const date_time = document.getElementById('appointment_date')
+    const date_time = document.getElementById('appointment_date');
     const hairstyle = document.getElementById('hairstyle');
     const errorMessage = document.getElementById('error-message'); 
     const hairErrorMessage = document.getElementById('hair-error-message');
-    const dateErrorMessage = document.getElementById('date-error-message')
+    const dateErrorMessage = document.getElementById('date-error-message');
+    const nameErrorMessage = document.getElementById('name-error-message');
+    const mailErrorMessage = document.getElementById('mail-error-message');
 
     // Only do this if you also require the checkbox
     const checkboxRequired = checkbox ? !checkbox.checked : false;
     const hairstyleRequired = hairstyle ? hairstyle.selectedIndex === 0 : true;
     const dateRequired = !date_time.value;
+    const nameRequired = !nameInput.value.trim();
+    const mailRequired = !mailInput.value.trim();
 
 
     if (hairstyleRequired){
@@ -514,6 +528,16 @@
       e.preventDefault();
       errorMessage.textContent = "Please agree to the Terms and Conditions!";
       checkbox.focus(); // Focus the checkbox
+      return;
+    }
+    if (nameRequired){
+      e.preventDefault();
+      nameErrorMessage.textContent = "please enter your name"
+      return;
+    }
+    if (mailRequired){
+      e.preventDefault();
+      mailErrorMessage.textContent = "please enter your email"
       return;
     }
 
