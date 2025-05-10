@@ -196,6 +196,17 @@
 
             <div class="col-sm-4">
               <div class="image-container">
+                <img src="images/braids.png" id="Braids" width="204px" height="204px" alt="Braids" class="thumbnail" data-style="braids">
+                <div class="click-label">Tap to View</div>
+              </div>
+              <h1 class="classic_text">BRAIDS</h1>
+              <p class="consectetur_text">
+                A classic protective style where your natural hair is braided into extensions. Box braids are lightweight, versatile, and perfect for long-lasting, low-maintenance beauty.
+              </p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="image-container">
                 <img src="images/hairimg-12.png" id="Locs" width="204px" height="204px" alt="Butterfly Locs" class="thumbnail" data-style="locs">
                 <div class="click-label">Tap to View</div>
               </div>
@@ -291,6 +302,30 @@
 
     <script>
       const styles = [
+      {
+          src: "images/box_braids_small.png",
+          title: "BOX BRAIDS(SMALL)",
+          description: "£55",
+          dataStyle: "braids",
+        },
+        {
+          src: "images/box_braids_medium.png",
+          title: "BOX BRAIDS(MEDIUM)",
+          description: "£45",
+          dataStyle: "braids",
+        },
+        {
+          src: "images/box_braids_large.png",
+          title: "BOX BRAIDS(LARGE)",
+          description: "£30",
+          dataStyle: "braids",
+        },
+        {
+          src: "images/curly_end_braids(short).png",
+          title: "CURLY-END BRAIDS",
+          description: "£45",
+          dataStyle: "braids",
+        },
       {
           src: "images/hair/new hair/long_fulani_braids.jpg",
           title: "FULANI BRAIDS(long)",
@@ -461,6 +496,8 @@
             overlayImage.src = activeGallery[currentIndex].src;
             overlayTitle.textContent = activeGallery[currentIndex].title;
             overlayText.textContent = activeGallery[currentIndex].description;
+
+            updateSelectLink()
 
             overlay.classList.add("show");
           }
