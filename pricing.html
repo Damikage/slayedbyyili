@@ -432,11 +432,11 @@
           const isHolidayDate = isHoliday(selectedDate);
 
           // If not a holiday, disable weekdays (Monday-Friday)
-          if (!isHolidayDate && day >= 1 && day <= 5) {
-              alert("Appointments are only available on weekends (Saturday & Sunday), except during holidays.");
-              this.value = ""; // Reset the input
-              return;
-          }
+          // if (!isHolidayDate && day >= 1 && day <= 5) {
+          //     alert("Appointments are only available on weekends (Saturday & Sunday), except during holidays.");
+          //     this.value = ""; // Reset the input
+          //     return;
+          // }
 
           // Check if the selected time is within the valid hours (9 AM to 7 PM)
           if (hours < 9 || hours > 19) {
